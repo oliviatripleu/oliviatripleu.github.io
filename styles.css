@@ -17,8 +17,10 @@ h3 {
 }
 div {
     text-align: center;
-    color: black;
-    background-color: rgb(255, 255, 255);
+    width: 300px;
+    border: 15px solid rgb(254, 185, 88);
+    padding: 50px;
+    margin: 20px;
 }
 blockquote {
     text-align: center;
