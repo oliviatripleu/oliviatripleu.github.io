@@ -1,8 +1,29 @@
-div {
-  color: white;
-  background-color: black;
+body {
+    background-color: rgb(255, 209, 246);
+}
+h1 {
+    background-color: rgb(255, 132, 255);
+}
+  
+h2 {
+    color: white;
+    background-color: rgb(255, 255, 255);
+}
+h3 {
+    color: white;
+    background-color: rgb(255, 255, 255);
 }
 
+div {
+    color: white;
+    background-color: rgb(255, 255, 255);
+}
+  
+blockquote {
+    color: white;
+    background-color: rgb(255, 255, 255);
+}
+  
 p {
-  color: red;
+    color: rgb(255, 255, 255);
 }
