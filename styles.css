@@ -1,23 +1,28 @@
 body {
-    background-color: rgb(255, 209, 246);
+    background-color: rgb(148, 148, 148);
 }
 h1 {
-    background-color: rgb(255, 132, 255);
+    text-align: center;
+    background-color: rgb(255, 181, 132);
 }
 h2 {
-    color: white;
-    background-color: rgb(255, 255, 255);
+    color: black;
+    text-align: center;
+    background-color: rgb(116, 211, 249);
 }
 h3 {
-    color: white;
-    background-color: rgb(255, 255, 255);
+    text-align: center;
+    color: black;
+    background-color: rgb(116, 211, 249);
 }
 div {
-    color: white;
+    text-align: center;
+    color: black;
     background-color: rgb(255, 255, 255);
 }
 blockquote {
-    color: white;
+    text-align: center;
+    color: black;
     background-color: rgb(255, 255, 255);
 }
 p {
