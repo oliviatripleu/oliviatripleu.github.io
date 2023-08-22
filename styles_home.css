@@ -31,10 +31,10 @@ p {
 a {
     text-align: center;
     color: black;
-    font-size: 30px;
-    width: 30%;
-    border: 15px solid rgb(254, 185, 88);
-    padding: 50px;
+    font-size: 20px;
+    width: 45%;
+    border: 25px solid rgb(254, 185, 88);
+    padding: 40px;
     margin: 20px;
     background-color: rgb(255, 255, 255);
 }
