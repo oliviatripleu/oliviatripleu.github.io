@@ -32,10 +32,10 @@ a {
     text-align: center;
     color: black;
     width: 30%;
-    border: 15px solid rgb(254, 185, 88);
-    padding: 50px;
+    border: 15px solid rgb(116, 211, 249);
+    padding: 5px;
     margin: 20px;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(182, 182, 182);
 }
 .center {
     margin: auto;
