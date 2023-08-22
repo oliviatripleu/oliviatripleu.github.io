@@ -31,6 +31,7 @@ p {
 a {
     text-align: center;
     color: black;
+    font-size: 30px;
     width: 30%;
     border: 15px solid rgb(254, 185, 88);
     padding: 50px;
