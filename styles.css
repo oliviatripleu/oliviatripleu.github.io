@@ -8,7 +8,7 @@ h1 {
 h2 {
     color: black;
     text-align: center;
-    background-color: rgb(201, 201, 201);
+    background-color: rgb(116, 211, 249);
 }
 h3 {
     text-align: center;
@@ -28,9 +28,20 @@ p {
     color: black;
     background-color: rgb(255, 255, 255);
 }
-.center {
+a {
+    text-align: center;
+    color: black;
+    width: 30%;
     border: 15px solid rgb(254, 185, 88);
+    padding: 50px;
+    margin: 20px;
+    background-color: rgb(255, 255, 255);
+}
+.center {
     margin: auto;
     width: 50%;
     padding: 10px;
+}
+.p1 {
+    font-family: "Verdana", Verdana, Geneva, Tahoma, sans-serif;
 }
