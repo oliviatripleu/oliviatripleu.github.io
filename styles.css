@@ -25,6 +25,10 @@ div {
 }
 p {
     text-align: center;
+    width: 300px;
+    border: 15px solid rgb(254, 185, 88);
+    padding: 50px;
+    margin: 20px;
     color: black;
     background-color: rgb(255, 255, 255);
 }
