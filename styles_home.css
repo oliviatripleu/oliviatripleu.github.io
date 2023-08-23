@@ -12,18 +12,14 @@ h1 {
   text-align: center;
 }
 h2 {
-  width: 35%;
   margin: auto;
-  color: black;
+  color: rgb(255, 255, 255);
   text-align: center;
-  background-color: rgb(116, 211, 249);
 }
 h3 {
-  width: 35%;
   margin: auto;
   text-align: center;
   color: black;
-  background-color: rgb(116, 211, 249);
 }
 div {
   text-align: center;
