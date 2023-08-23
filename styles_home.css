@@ -2,8 +2,10 @@ body {
     background-color: rgb(103, 103, 103);
 }
 h1 {
+    color: white;
+    font-size: 90px;
     text-align: center;
-    background-color: rgb(182, 182, 182);
+    background-color: rgb(103, 103, 103);
 }
 h2 {
     color: black;
@@ -45,4 +47,8 @@ a {
 }
 .p1 {
     font-family: "Verdana", Verdana, Geneva, Tahoma, sans-serif;
+}
+.eqi-container {
+    display: flex;
+    justify-content: space-between;
 }
