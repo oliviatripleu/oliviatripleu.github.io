@@ -8,11 +8,13 @@ h1 {
     background-color: rgb(103, 103, 103);
 }
 h2 {
+    width: 75%;
     color: black;
     text-align: center;
     background-color: rgb(116, 211, 249);
 }
 h3 {
+    width: 75%;
     text-align: center;
     color: black;
     background-color: rgb(116, 211, 249);
