@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="notes.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time Analysis</title>
+  </head>
+  <body>
+    <div>
+      <md-block>
+        # Sorts Analysis<br />
+        ## Bubble sort: <br />
+        - Stable <br />&nbsp - Side-by-side swapping <br />
+        - Time complexity: <br />&nbsp - Worse case (reverse sorted): O(n^2)
+        <br />&nbsp - Best case (sorted): O(n)
+        <br />
+        - Adaptable <br />
+        ## Insertion sort <br />
+        - Stable <br />&nbsp - Side-by-side swapping <br />
+        - Time complexity: <br />&nbsp - Worse case (reverse sorted): O(n^2)
+        <br />&nbsp - Best case (sorted): O(n)
+        <br />
+        - Adaptable <br />
+        ## Selection sort <br />
+        - Unstable <br />&nbsp - Swapping jumps around
+        <br />
+        - Time complexity: <br />&nbsp - Cost is the same regardless <br />&nbsp
+        - Reverse sorted: O(n^2) <br />&nbsp - Sorted: O(n^2) <br />
+        - Not adaptable <br />
+        ## Merge sort <br />
+        - Stable <br />
+        - Side-by-side swapping
+        <br />
+        - Time complexity: <br />&nbsp - Worse case (reverse sorted): O(n *
+        log(n)) <br />&nbsp - Best case (sorted): O(n * log(n)) <br />
+        - Not adaptable <br />
+        ## Naive quicksort <br />
+        - Unstable <br />&nbsp - Swapping jumps around
+        <br />
+        - Time complexity: <br />&nbsp - Worse case (every choice of pivot gives
+        one of the highest or lowest values): O(n^2) <br />&nbsp - Best case
+        (every choice of pivot gives two equal halves): O(n * log(n))
+        <br />
+        - Adaptable <br />
+        ## Median-of-three quicksort <br />
+        - Unstable <br />&nbsp - Swapping jumps around
+        <br />
+        - Time complexity: <br />&nbsp - Average: O(n * log(n)) <br />
+        - Adaptable <br />
+        ## Randomised quicksort <br />
+        - Unstable <br />&nbsp - Swapping jumps around
+        <br />
+        - Time complexity: <br />&nbsp - Average: O(n * log(n)) <br />
+        - Adaptable
+      </md-block>
+    </div>
+    <br /><br />
+    <nav
+      class="center"
+      style="font-family: Verdana, Geneva, Tahoma, sans-serif"
+    >
+      <a href="./notes.html">Back</a>
+    </nav>
+  </body>
+</html>
