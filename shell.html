@@ -62,18 +62,16 @@
         - `chmod u+x frequency.sh`
         gives you permission to execute the file <br>
         - `rwxr--r-x` <br>
-        ## Single vs.
-        Double Quotes <br>
+        ## Single vs. Double Quotes <br>
         - `' '` groups the characters into a single word <br>
         - `" "`
         expands variables, commands, and arithmetic <br>
-        ## Exit Status and Control -
-        shell scripts look at other programs’ exit status <br>
+        ## Exit Status and Control 
+        - shell scripts look at other programs’ exit status <br>
         - false = 1, true = 0
         <br>
         - `echo $?` gives you the exit status of the command you just ran <br>
-        ###
-        Using Exit Status for Conditional Execution <br>
+        ### Using Exit Status for Conditional Execution <br>
         - commands separated by a
         `;` or newline <br>
         - all commands are executed <br>
@@ -107,8 +105,17 @@
         - `--silent` prevents it
         giving you a bunch of timing information <br>
         - e.g. `curl --silent https...
-        2>/dev/null | grep "$regex"`
-      </md-block>
+        2>/dev/null | grep "$regex"`<br>
+        ## Temporary files
+        - if you change a variable inside a pipeline, it won’t be changed outside the pipeline
+        - `mktemp` to make a temporary file
+        - use `trap 'rm -f $temporary_file' EXIT`
+        - right after you make the temp file
+        - to remove the temporary file when you exit, however the program exits
+        ## Using here document
+        - `<< marker` calls a here document
+        - `marker` ends the here document
+</md-block>
     </div>
     <br /><br />
     <nav
