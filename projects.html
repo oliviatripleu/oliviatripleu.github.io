@@ -25,7 +25,15 @@
         <h3 style="font-family: Verdana, Geneva, Tahoma, sans-serif">
           Coded in JavaScript
         </h3>
-        <p>Interactive Game</p>
+        <p id="demo">Interactive Game</p>
+
+        <button type="button" onclick="myFunction()">Try it</button>
+
+        <script>
+          function myFunction() {
+            document.getElementById("demo").innerHTML = "Game not available.";
+          }
+        </script>
       </div>
     </section>
     <br /><br />
