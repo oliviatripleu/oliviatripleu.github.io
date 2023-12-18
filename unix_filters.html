@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="notes.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time Analysis</title>
+  </head>
+  <body>
+    <div>
+      <md-block>
+        # Unix Filters
+
+## Filter
+
+- program that transforms a byte stream
+- commands that take in the standard input, perform a transformation, and writes the transformed bytes to std output
+- most are line-based
+
+## Using Filters
+
+```python
+$ <input.txt filter >output.txt
+
+$ filter input1.txt input2.txt input3.txt >output.txt
+```
+
+- Filters used in combination are powerful (via a pipeline)
+    
+    ```python
+    filter1 | filter2 | ... | filterN
+    ```
+    
+- read from the file data1
+    
+    ```python
+    filter data1
+    
+    OR
+    
+    filter < data1
+    ```
+    
+- read from the files data1 data2 data3
+    
+    ```python
+    filter data1 data2 data3
+    ```
+    
+- read from data1, then stdin, then data2
+    
+    ```python
+    filter data1 - data2
+    ```
+    
+
+## Cat
+
+- ******cat****** is the simplest filter
+    - passes the byte stream unchanged
+    - copies input to output unchanged
+    - useful cat options
+    
+    | -n | number output lines |
+    | --- | --- |
+    | -A | display non-printing characters |
+    | -s | squeeze consecutive blank lines into a single blank line |
+
+## Regex
+
+- regular expressions
+
+| p* | 0 or more multiples of the previous char |
+| --- | --- |
+| a | b | a or b |
+| (a | b) {4} | () for grouping, repeat it 4 times |
+| \ * | removes any special meaning of the following character |
+| . | any single character |
+| [aeiou] | any single vowel |
+| [^aeiou] | any single character that’s NOT a vowel |
+| ^s | s must be at the start of the string |
+| c$ | must end the string with c |
+| p+ | 1 or more multiples of the previous char |
+| p? | 0 or 1 multiples of the previous char |
+| p{n} | n repetitions of p |
+| p{n,m} | n to m repetitions of p |
+| p{n,} | n or more repetitions of p |
+| p{,m) | m or less repetitions of p |
+| ^$ | anything that is an empty line |
+| $’[ \t]$’ | tab at the end of the line |
+| /s$ | string that end with whitespace |
+| [LBHP] | L, B, H, or P |
+| \w | something that is a word character |
+| \W | something that is NOT a word character |
+| ‘^[1-9=-0-9]*(,[1-9][0-9]*)+$’ | list of positive numbers |
+| ‘”[^”]\n”’ |  |
+
+## Using Grep
+
+- prints the lines that contain the regex
+
+```python
+grep -E '(a|b){4}' dictionary.txt
+```
+
+| -i | ignore upper/lower-case difference in matching |
+| --- | --- |
+| -v  | only display lines that do not match the pattern |
+| -c | print a count of matching lines |
+| -w | only match pattern if it makes a complete word |
+
+## Variations of grep
+
+| grep -F | strings without regex |
+| --- | --- |
+| grep -G OR grep | like grep -E but without +?|(){} |
+| grep -E | most commonly used, full POSIX regular expressions |
+| grep -P | use if you need Perl/Python regex extensions |
+
+## wc: word counter
+
+- by default, wc prints the number of lines, words, characters in the input
+
+| -c | print the number of characters |
+| --- | --- |
+| -w | print the number of words |
+| -l | print the number of lines |
+
+## tr: transliterate characters
+
+| -c | map all bytes not occurring in sourceChars (complement) |
+| --- | --- |
+| -s | squeeze adjacent repeated characters out (only copy the first) |
+| -d | delete all characters in sourceChars (no destChars) |
+
+## head/ tail
+
+| head | prints the first n lines of input |
+| --- | --- |
+| tail | prints the last n lines of input |
+
+## cut
+
+- prints selected parts of input lines
+
+| -flistOfCols | print only the specified fields on output |
+| --- | --- |
+| -clistOfPos | print only chars in the specified positions |
+| -dc | use character c as the field separator |
+
+## sort
+
+- copies input to output but ensures that the output is sorted
+- by default, sorted by first character in the line
+
+ 
+
+| -r | reverse sort |
+| --- | --- |
+| -n | sort numerically |
+| -d  | dictionary order (ignore non-letters and non-digits |
+| -tc | use character c to separate columns (default: space) |
+| -kn | sort on column n |
+
+## uniq
+
+- by default, removes or counts (consecutive) duplicates
+
+| -c | also print number of times each line is duplicated |
+| --- | --- |
+| -d | only print (one copy of ) duplicated lines) |
+| -u | only print lines that occur uniquely (once) |
+- `sort` and then `uniq` would remove all duplicates even if they’re not contiguous
+
+## Using commands in combination
+
+```python
+cut -d\| -f1 enrollments.txt |sort|uniq -c|sort -n|tail -1
+
+grep -E 'COMP2041.*F$' enrollments.txt | wc -1
+```
+
+## sed
+
+- partition lines based on patterns rather than columns
+- by default, prints out everything
+
+**Options:**
+
+| -n | do not print these lines by default |
+| --- | --- |
+| -E | extended regular expressions |
+
+**Editing commands:**
+
+| p | print the current line |
+| --- | --- |
+| d | delete the current line |
+| s/regex/replace | subs first occurrence of string matching regex by “replace” string |
+| s/regex/replace/g | subs all occurrences of string matching regex by “replace” string (adding a ‘g’ at the end makes it global) |
+| q | terminate execution of sed |
+
+```python
+# prints line 7
+sed -n '7p' data
+
+#prints using regex
+sed -n '/^(cs|en|bi|se)[0-9]{4}/p' data
+
+#deletes everything between the line that starts with j and the line that starts with c
+sed -E '/^j/,/^c/d' data
+```
+
+```python
+grep -Ev '[^AB]|((BB).*(AA))' input.txt
+
+# turns all uppercase letters into their lowercase equivalent
+sed -E 's/[A-Z]/\L&/g' enrolments.psv
+```
+
+## delimiter
+
+- character that separates columns in a file
+- e.g. | or :
+- if you’re using SPACE as a delimiter and you want the second field:
+    - `tr -s " " | cut -d' ' -f3`
+      </md-block>
+    </div>
+    <br />
+    <nav
+      class="center"
+      style="font-family: Verdana, Geneva, Tahoma, sans-serif"
+    >
+      <a href="./notes.html">Back</a>
+    </nav>
+    <br><br>
+  </body>
+</html>
