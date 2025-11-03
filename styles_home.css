@@ -1,9 +1,8 @@
 body {
   height: 100vh;
-  background-image: url("https://cdn.pixabay.com/photo/2020/12/25/04/51/polar-lights-5858656_1280.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: rgb(103, 103, 103);
+  background-color: rgb(222, 122, 154);
 }
 h1 {
   margin: auto;
