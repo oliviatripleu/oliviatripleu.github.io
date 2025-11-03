@@ -1,9 +1,9 @@
 body {
   height: 100vh;
-  background-image: url("https://cdn.pixabay.com/photo/2020/12/25/04/51/polar-lights-5858656_1280.jpg");
+  background-image: url("https://images.pexels.com/photos/172276/pexels-photo-172276.jpeg?cs=srgb&dl=pexels-fwstudio-33348-172276.jpg&fm=jpg");
   background-size: cover;
-  background-repeat: no-repeat;
-  background-color: rgb(103, 103, 103);
+  background-repeat: repeat;
+  background-color: rgb(255, 255, 255);
 }
 h1 {
   margin: auto;
@@ -33,16 +33,19 @@ p {
   margin: 20px;
   text-align: center;
   color: rgb(223, 223, 223);
+  font-family: CourierX, Courier, "Courier New", monospace;
 }
 a {
   text-align: center;
-  color: black;
-  font-size: 20px;
+  color: rgb(223, 223, 223);
+  font-size: 14px;
   width: 40%;
-  border: 5px solid rgb(181, 181, 181);
-  padding: 30px;
+  border: 2px solid rgb(52, 0, 0);
+  padding: 10px;
   margin: 20px;
+  background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20240801/pngtree-dark-wood-grain-texture-background---seamless-pattern-image_16123647.jpg");
   background-color: rgb(255, 255, 255);
+  box-shadow: 2px 2px rgb(59, 0, 0);
 }
 .center {
   margin: auto;
@@ -50,9 +53,18 @@ a {
   padding: 10px;
 }
 .p1 {
-  font-family: "Verdana", Verdana, Geneva, Tahoma, sans-serif;
+  font-family: CourierX, Courier, "Courier New", monospace;
 }
 #eqi-container {
   display: flex;
   justify-content: space-between;
+}
+.container {
+  width: 50%;
+  padding: 30px;
+  height: 50%;
+  background-color: antiquewhite;
+  border-color: rgb(111, 62, 31);
+  clip-path: margin-box;
+  box-shadow: 2px 2px rgb(59, 0, 0);
 }
